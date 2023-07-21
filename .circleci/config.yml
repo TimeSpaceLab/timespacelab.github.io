@@ -1,0 +1,61 @@
+aliases:
+  - &filter-only-main
+
+version: 2
+jobs:
+  build-and-test:
+    docker:
+      - image: cimg/node:19.0.1
+    steps:
+      - checkout
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run check-format
+      - run: npm run build
+
+  deploy-website:
+    docker:
+      - image: cimg/node:19.0.1
+
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            # repo-specific deploy key
+            # generate via `ssh-keygen -t ed25519 -C "ops@darklang.com"`
+            # Public key goes here: https://github.com/darklang/docs/settings/keys
+            # Private key goes here: https://app.circleci.com/settings/project/github/darklang/docs/ssh
+            # Fingerprint from CircleCI goes below
+            - "91:e9:87:60:10:f7:ad:a1:af:42:62:09:78:e7:b3:f0"
+      - checkout
+      - run:
+          name: Deploying to GitHub Pages
+          command: |
+            git config --global user.email "ops@darklang.com"
+            git config --global user.name "Dark Ops"
+            npm install --frozen-lockfile && GIT_USER=none USE_SSH=true CUSTOM_COMMIT_MESSAGE="[skip ci] Automated Deploy of $CIRCLE_SHA1 via CircleCI" npm run-script deploy
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build-and-test:
+          filters:
+            branches:
+              ignore:
+                - gh-pages
+                - main
+
+  build_and_deploy:
+    jobs:
+      - build-and-test:
+          filters:
+            branches:
+              only:
+                - main
+      - deploy-website:
+          requires:
+            - build-and-test
+          filters:
+            branches:
+              only:
+                - main

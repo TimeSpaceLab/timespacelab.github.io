@@ -1,0 +1,12 @@
+{
+  "//": "https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md",
+  "default": true,
+  "MD007": { "indent": 2 },
+  "MD013": false,
+  "MD024": { "allow_different_nesting": true },
+  "MD026": { "punctuation": ".,;" },
+  "MD029": false,
+  "MD033": false,
+  "MD045": false,
+  "MD046": { "style": "fenced" }
+}

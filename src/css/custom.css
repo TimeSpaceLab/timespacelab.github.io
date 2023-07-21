@@ -1,0 +1,239 @@
+/* stylelint-disable docusaurus/copyright-header */
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-code-font-size: 95%;
+  /* --ifm-color-primary: #212121; */
+  /* --ifm-color-primary-dark: #1e1e1e; */
+  /* --ifm-color-primary-darker: #1c1c1c; */
+  /* --ifm-color-primary-darkest: #171717; */
+  /* --ifm-color-primary-light: #242424; */
+  /* --ifm-color-primary-lighter: #262626; */
+  /* --ifm-color-primary-lightest: #2b2b2b; */
+  --ifm-color-primary: #5f3e6b;
+  --ifm-color-primary-dark: #563860;
+  --ifm-color-primary-darker: #51355b;
+  --ifm-color-primary-darkest: #432b4b;
+  --ifm-color-primary-light: #684476;
+  --ifm-color-primary-lighter: #6d477b;
+  --ifm-color-primary-lightest: #7b518b;
+  --darklang-white: #f8f8f8;
+  --darklang-black: #2f2f2f;
+  --darklang-darkBackground-grey: #6f6f6f;
+  --darklang-lightBackground-grey: #8f8f8f;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgb(72, 77, 91);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (min-width: 1500px) {
+}
+
+a {
+  color: #6d74c5;
+}
+
+img {
+  height: auto;
+}
+
+/* Sharing dark logo layout */
+
+/* overall layout */
+
+.logos {
+  margin: 2em 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.logos .logo,
+.logos .wordmark,
+.logos .colors {
+  width: 50%;
+  padding: 1.5em;
+  height: 13rem;
+}
+
+/* general styles */
+
+.logos a {
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+/* layout of logo and wordmark (with image options) */
+
+.logos .logo,
+.logos .wordmark {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logos .wordmark img,
+.logos .logo img {
+  height: 8rem;
+  width: auto;
+}
+
+.logos p {
+  margin-bottom: 0px;
+}
+
+.logos .spacer {
+  padding-right: 0.4rem;
+  padding-left: 0.4rem;
+}
+
+/* Dark background */
+
+.logos .darkBackground {
+  background: var(--darklang-black);
+  color: var(--darklang-darkBackground-grey);
+}
+
+.logos .darkBackground a {
+  color: #6d74c5;
+}
+
+.logos .darkBackground a:hover {
+  color: var(--darklang-white);
+}
+
+.logos .darkBackground .spacer {
+  color: var(--darklang-darkBackground-grey);
+}
+
+/* Light background */
+
+.logos .lightBackground {
+  background: var(--darklang-white);
+}
+
+.logos .lightBackground .spacer {
+  color: #8f8f8f;
+}
+
+/* Transparency */
+
+.logos .wordmark,
+.logos .logo {
+  position: relative;
+}
+
+.logos .transparent {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  border-radius: 60px;
+  padding: 0rem 0.4rem 0.1rem;
+  line-height: 1.3rem;
+  height: 1.3rem;
+}
+
+.logos .darkBackground .transparent {
+  background: #f8f8f833;
+  color: #c8c8c8;
+}
+
+.logos .lightBackground .transparent {
+  background: #28282833;
+  color: #282828;
+}
+
+/* Colors */
+
+.logos .colors {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 2.5rem;
+}
+
+.logos .colors .colorName {
+  height: 1rem;
+  line-height: 1rem;
+  width: 50%;
+  text-align: right;
+  padding-right: 1.5rem;
+}
+
+.logos .colors .swatch {
+  height: 1.2rem;
+  line-height: 1rem;
+  font-size: 0.8rem;
+  padding: 1px 6px 2px 6px;
+  border-radius: 60px;
+}
+
+.logos .lightBackground.colors .black {
+  background: var(--darklang-black);
+  color: var(--darklang-white);
+}
+
+.logos .lightBackground.colors .white {
+  background: var(--darklang-white);
+  color: var(--darklang-black);
+  border: solid 1px;
+  padding-top: 0;
+  border-color: var(--darklang-black);
+}
+
+.logos .lightBackground.colors .purple {
+  background: #955b9f;
+  color: var(--darklang-white);
+}
+
+.logos .lightBackground.colors .blue {
+  background: #747ab9;
+  color: var(--darklang-white);
+}
+
+.logos .darkBackground.colors .black {
+  background: var(--darklang-black);
+  color: var(--darklang-white);
+  border: solid 1px;
+  padding-top: 0;
+  border-color: var(--darklang-white);
+}
+
+.logos .darkBackground.colors .white {
+  background: var(--darklang-white);
+  color: var(--darklang-black);
+}
+
+.logos .darkBackground.colors .purple {
+  background: #8f5ea1;
+  border-width: 0px;
+  color: var(--darklang-white);
+}
+
+.logos .darkBackground.colors .blue {
+  background: #747ab9;
+  color: var(--darklang-white);
+}
