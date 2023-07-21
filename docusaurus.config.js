@@ -2,12 +2,13 @@ const path = require("path");
 module.exports = {
   title: "Dark Documentation",
   tagline: "Dark Documentation",
-  url: "https://docs.darklang.com", // Website URL
-  baseUrl: "/", // Base URL for the project. For projects hosted on GitHub pages, it follows the format "/projectName/"
+  url: "https://timespacelab.github.io", // Website URL
+  baseUrl: "/build/", // Base URL for the project. For projects hosted on GitHub pages, it follows the format "/projectName/"
   favicon: "img/favicon.ico",
-  organizationName: "darklang", // Usually your GitHub org/user name.
+  organizationName: "timespacelab", // Usually your GitHub org/user name.
   trailingSlash: false, // See https://docusaurus.io/docs/deployment#deploying-to-github-pages
-  projectName: "docs", // Usually your repo name.
+  deploymentBranch: 'gh-pages',
+  projectName: "timespacelab.github.io", // Usually your repo name.
   plugins: [
     path.resolve(__dirname, "src/plugins/heap-analytics"),
     path.resolve(__dirname, "src/plugins/savvy"),
